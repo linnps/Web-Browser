@@ -26,5 +26,13 @@ namespace WebBrowser.UI
         {
             Application.Exit();
         }
+
+        private void textBox1_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                WebBrowser.
+            }
+        }
     }
 }
