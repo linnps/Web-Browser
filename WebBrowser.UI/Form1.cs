@@ -31,7 +31,7 @@ namespace WebBrowser.UI
         {
             if (e.KeyCode == Keys.Enter)
             {
-                WebBrowser.
+                webBrowser1.Navigate(textBox1.Text);
             }
         }
     }
