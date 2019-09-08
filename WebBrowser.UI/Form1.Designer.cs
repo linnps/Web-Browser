@@ -35,6 +35,9 @@
             this.savePageAsHTMLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.printPageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitWebBrowserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.manageHistoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.manageBookmarksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -42,7 +45,8 @@
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem});
+            this.fileToolStripMenuItem,
+            this.toolsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1637, 40);
@@ -91,6 +95,27 @@
             this.exitWebBrowserToolStripMenuItem.Size = new System.Drawing.Size(324, 38);
             this.exitWebBrowserToolStripMenuItem.Text = "Exit Web Browser";
             // 
+            // toolsToolStripMenuItem
+            // 
+            this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.manageHistoryToolStripMenuItem,
+            this.manageBookmarksToolStripMenuItem});
+            this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
+            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(82, 36);
+            this.toolsToolStripMenuItem.Text = "Tools";
+            // 
+            // manageHistoryToolStripMenuItem
+            // 
+            this.manageHistoryToolStripMenuItem.Name = "manageHistoryToolStripMenuItem";
+            this.manageHistoryToolStripMenuItem.Size = new System.Drawing.Size(325, 38);
+            this.manageHistoryToolStripMenuItem.Text = "Manage History";
+            // 
+            // manageBookmarksToolStripMenuItem
+            // 
+            this.manageBookmarksToolStripMenuItem.Name = "manageBookmarksToolStripMenuItem";
+            this.manageBookmarksToolStripMenuItem.Size = new System.Drawing.Size(325, 38);
+            this.manageBookmarksToolStripMenuItem.Text = "Manage Bookmarks";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -116,6 +141,9 @@
         private System.Windows.Forms.ToolStripMenuItem savePageAsHTMLToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem printPageToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitWebBrowserToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem manageHistoryToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem manageBookmarksToolStripMenuItem;
     }
 }
 
