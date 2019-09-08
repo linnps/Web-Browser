@@ -16,5 +16,10 @@ namespace WebBrowser.UI
         {
             InitializeComponent();
         }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("a simple homemade browser made by student Li-Kai Lin ID: 904012712");
+        }
     }
 }
