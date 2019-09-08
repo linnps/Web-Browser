@@ -34,5 +34,10 @@ namespace WebBrowser.UI
                 webBrowser1.Navigate(textBox1.Text);
             }
         }
+
+        private void toolStripButton5_Click(object sender, EventArgs e)
+        {
+            webBrowser1.Navigate(textBox1.Text);
+        }
     }
 }
