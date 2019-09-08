@@ -21,5 +21,10 @@ namespace WebBrowser.UI
         {
             MessageBox.Show("a simple homemade browser made by student Li-Kai Lin ID: 904012712");
         }
+
+        private void exitWebBrowserToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
