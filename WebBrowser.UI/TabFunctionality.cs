@@ -34,5 +34,13 @@ namespace WebBrowser.UI
             webBrowser1.Navigate(textBox1.Text);
             webHistoryB.Push(textBox1.Text);
         }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            webHistoryF.Push(textBox1.Text);
+            string currentLink = webHistoryB.Pop();
+            textBox1.Text = currentLink;
+            webBrowser1.Navigate(currentLink);
+        }
     }
 }
