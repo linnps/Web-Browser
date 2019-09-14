@@ -26,18 +26,5 @@ namespace WebBrowser.UI
         {
             Application.Exit();
         }
-
-        private void textBox1_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                webBrowser1.Navigate(textBox1.Text);
-            }
-        }
-
-        private void toolStripButton5_Click(object sender, EventArgs e)
-        {
-            webBrowser1.Navigate(textBox1.Text);
-        }
     }
 }
