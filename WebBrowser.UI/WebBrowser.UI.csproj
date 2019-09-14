@@ -54,6 +54,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TabFunctionality.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TabFunctionality.Designer.cs">
+      <DependentUpon>TabFunctionality.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
