@@ -12,7 +12,8 @@ namespace WebBrowser.UI
 {
     public partial class TabFunctionality : UserControl
     {
-        Stack<string> webHistory = new Stack<string>();
+        Stack<string> webHistoryB = new Stack<string>();
+        Stack<string> webHistoryF = new Stack<string>();
 
         public TabFunctionality()
         {
@@ -24,13 +25,14 @@ namespace WebBrowser.UI
             if (e.KeyCode == Keys.Enter)
             {
                 webBrowser1.Navigate(textBox1.Text);
-                
+                webHistoryB.Push(textBox1.Text);
             }
         }
 
         private void toolStripButton5_Click(object sender, EventArgs e)
         {
             webBrowser1.Navigate(textBox1.Text);
+            webHistoryB.Push(textBox1.Text);
         }
     }
 }
