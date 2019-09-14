@@ -12,6 +12,8 @@ namespace WebBrowser.UI
 {
     public partial class TabFunctionality : UserControl
     {
+        Stack<string> webHistory = new Stack<string>();
+
         public TabFunctionality()
         {
             InitializeComponent();
@@ -22,6 +24,7 @@ namespace WebBrowser.UI
             if (e.KeyCode == Keys.Enter)
             {
                 webBrowser1.Navigate(textBox1.Text);
+                
             }
         }
 
