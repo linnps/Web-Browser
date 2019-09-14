@@ -20,35 +20,89 @@ namespace WebBrowser.UI
             InitializeComponent();
         }
 
-        private void textBox1_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                webBrowser1.Navigate(textBox1.Text);
-                webHistoryB.Push(textBox1.Text);
-            }
-        }
 
         private void toolStripButton5_Click(object sender, EventArgs e)
         {
-            webBrowser1.Navigate(textBox1.Text);
-            webHistoryB.Push(textBox1.Text);
+            if (webHistoryB.Count == 0)
+            {
+                webHistoryB.Push(textBox1.Text);
+                webBrowser1.Navigate(textBox1.Text);
+            }
+            else if (webHistoryB.Count != 0 && textBox1.Text != webHistoryB.Peek())
+            {
+                webHistoryB.Push(textBox1.Text);
+                webBrowser1.Navigate(textBox1.Text);
+            }
+            else
+            {
+                webBrowser1.Navigate(textBox1.Text);
+            }
+
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
             webHistoryF.Push(textBox1.Text);
-            string currentLink = webHistoryB.Pop();
-            textBox1.Text = currentLink;
-            webBrowser1.Navigate(currentLink);
+            if (webHistoryB.Count == 0)
+            {
+                webBrowser1.Navigate(textBox1.Text);
+            }
+            else if (textBox1.Text == webHistoryB.Peek())
+            {
+                while (textBox1.Text == webHistoryB.Peek())
+                {
+                    webHistoryB.Pop();
+                }
+                string currentLink = webHistoryB.Pop();
+                textBox1.Text = currentLink;
+                webBrowser1.Navigate(currentLink);
+            }
+            else
+            {
+                string currentLink = webHistoryB.Pop();
+                textBox1.Text = currentLink;
+                webBrowser1.Navigate(currentLink);
+            }
+            
+            
+            
         }
 
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
             webHistoryB.Push(textBox1.Text);
-            string currentLink = webHistoryF.Pop();
-            textBox1.Text = currentLink;
-            webBrowser1.Navigate(currentLink);
+            if (webHistoryF.Count == 0)
+            {
+                webBrowser1.Navigate(textBox1.Text);
+            }
+            else
+            {
+                string currentLink = webHistoryF.Pop();
+                textBox1.Text = currentLink;
+                webBrowser1.Navigate(currentLink);
+            }  
+        }
+
+        private void textBox1_KeyUp_1(object sender, KeyEventArgs e)
+
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (webHistoryB.Count == 0)
+                {
+                    webHistoryB.Push(textBox1.Text);
+                    webBrowser1.Navigate(textBox1.Text);
+                }
+                else if (webHistoryB.Count != 0 && textBox1.Text != webHistoryB.Peek())
+                {
+                    webHistoryB.Push(textBox1.Text);
+                    webBrowser1.Navigate(textBox1.Text);
+                }
+                else
+                {
+                    webBrowser1.Navigate(textBox1.Text);
+                }
+            }
         }
     }
 }

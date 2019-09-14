@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TabFunctionality));
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
@@ -38,27 +37,21 @@
             this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
+            this.textBox1 = new System.Windows.Forms.ToolStripTextBox();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(423, 29);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(800, 31);
-            this.textBox1.TabIndex = 4;
-            this.textBox1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyUp);
             // 
             // toolStrip1
             // 
             this.toolStrip1.AutoSize = false;
-            this.toolStrip1.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.toolStrip1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(30, 30);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButton1,
             this.toolStripButton2,
-            this.toolStripButton3,
             this.toolStripButton4,
+            this.toolStripButton3,
+            this.textBox1,
             this.toolStripButton5,
             this.toolStripButton6});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
@@ -135,19 +128,23 @@
             this.webBrowser1.Size = new System.Drawing.Size(1836, 1066);
             this.webBrowser1.TabIndex = 5;
             // 
+            // textBox1
+            // 
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(500, 85);
+            this.textBox1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyUp_1);
+            // 
             // TabFunctionality
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.webBrowser1);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.toolStrip1);
             this.Name = "TabFunctionality";
             this.Size = new System.Drawing.Size(1836, 1151);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -159,7 +156,7 @@
         private System.Windows.Forms.ToolStripButton toolStripButton4;
         private System.Windows.Forms.ToolStripButton toolStripButton5;
         private System.Windows.Forms.ToolStripButton toolStripButton6;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.WebBrowser webBrowser1;
+        private System.Windows.Forms.ToolStripTextBox textBox1;
     }
 }
