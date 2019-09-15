@@ -26,5 +26,13 @@ namespace WebBrowser.UI
         {
             Application.Exit();
         }
+
+        private void tabControl1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Control && (e.KeyCode == Keys.T))
+                this.tabControl1.TabPages.Add(new TabPage("New Tab"));
+            if (e.Control && (e.KeyCode == Keys.W))
+                this.tabControl1.TabPages.RemoveAt(this.tabControl1.SelectedIndex);
+        }
     }
 }
