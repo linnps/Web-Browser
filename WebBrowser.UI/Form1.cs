@@ -38,7 +38,12 @@ namespace WebBrowser.UI
 
         private void newTabToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.tabControl1.TabPages.Add(new TabPage("New Tab"));
+            TabFunctionality tabFunc1 = new TabFunctionality();
+            tabFunc1.Dock = DockStyle.Fill;
+            TabPage newPage1 = new TabPage("New Tab");
+            newPage1.Controls.Add(tabFunc1);
+            this.tabControl1.TabPages.Add(newPage1);
+
         }
     }
 }
