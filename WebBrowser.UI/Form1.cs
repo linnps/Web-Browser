@@ -35,5 +35,10 @@ namespace WebBrowser.UI
                 this.tabControl1.TabPages.RemoveAt(this.tabControl1.SelectedIndex);
 
         }
+
+        private void newTabToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.tabControl1.TabPages.Add(new TabPage("New Tab"));
+        }
     }
 }
