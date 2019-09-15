@@ -33,6 +33,7 @@ namespace WebBrowser.UI
                 this.tabControl1.TabPages.Add(new TabPage("New Tab"));
             if (e.Control && (e.KeyCode == Keys.W))
                 this.tabControl1.TabPages.RemoveAt(this.tabControl1.SelectedIndex);
+
         }
     }
 }
