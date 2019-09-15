@@ -27,15 +27,6 @@ namespace WebBrowser.UI
             Application.Exit();
         }
 
-        private void tabControl1_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.Control && (e.KeyCode == Keys.T))
-                this.tabControl1.TabPages.Add(new TabPage("New Tab"));
-            if (e.Control && (e.KeyCode == Keys.W))
-                this.tabControl1.TabPages.RemoveAt(this.tabControl1.SelectedIndex);
-
-        }
-
         private void newTabToolStripMenuItem_Click(object sender, EventArgs e)
         {
             TabFunctionality tabFunc1 = new TabFunctionality();
@@ -44,6 +35,25 @@ namespace WebBrowser.UI
             newPage1.Controls.Add(tabFunc1);
             this.tabControl1.TabPages.Add(newPage1);
 
+        }
+
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Control && (e.KeyCode == Keys.T))
+            {
+                TabFunctionality tabFunc1 = new TabFunctionality();
+                tabFunc1.Dock = DockStyle.Fill;
+                TabPage newPage1 = new TabPage("New Tab");
+                newPage1.Controls.Add(tabFunc1);
+                this.tabControl1.TabPages.Add(newPage1);
+            }
+            if (e.Control && (e.KeyCode == Keys.W))
+                this.tabControl1.TabPages.RemoveAt(this.tabControl1.SelectedIndex);
+        }
+
+        private void closeCurrentTabToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.tabControl1.TabPages.RemoveAt(this.tabControl1.SelectedIndex);
         }
     }
 }
