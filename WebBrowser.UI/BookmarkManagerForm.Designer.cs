@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BookmarkManagerForm));
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
@@ -37,17 +38,18 @@
             this.listBox1.ItemHeight = 25;
             this.listBox1.Location = new System.Drawing.Point(108, 64);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(916, 729);
+            this.listBox1.Size = new System.Drawing.Size(1482, 1004);
             this.listBox1.TabIndex = 0;
             // 
             // BookmarkManagerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1198, 898);
+            this.ClientSize = new System.Drawing.Size(1749, 1238);
             this.Controls.Add(this.listBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "BookmarkManagerForm";
-            this.Text = "BookmarkManagerForm";
+            this.Text = "Bookmark Manager Form";
             this.Load += new System.EventHandler(this.BookmarkManagerForm_Load);
             this.ResumeLayout(false);
 

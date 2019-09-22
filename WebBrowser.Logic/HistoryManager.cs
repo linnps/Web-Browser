@@ -30,6 +30,22 @@ namespace WebBrowser.Logic
 
                 results.Add(item);
             }
+            HistoryItem newItem = new HistoryItem();
+            int i = 0;
+            while (i != results.Count)
+            {
+                if (newItem.URL == results[i].URL)
+                {
+                    
+                    results.Remove(results[i]);
+                }
+                else
+                {
+                    newItem = results[i];
+                    i++;
+                }
+            }
+
             return results;
             //this is for history manager
             //Add a History Manager class, with static methods that can add a history item to the
