@@ -31,7 +31,9 @@ namespace WebBrowser.Logic
                 results.Add(item);
             }
             return results;
-        //this is for bookmarkmanager
+            //this is for bookmarkmanager
+            //Add a Bookmark Manager class, with static methods that can add a bookmark item
+            //to the database and get all bookmark items from the database
         }
     }
 }
