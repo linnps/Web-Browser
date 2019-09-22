@@ -133,16 +133,16 @@ namespace WebBrowser.UI
         private void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
         {
 
-
+            var historyNew = new HistoryItem();
+            historyNew.URL = webBrowser1.Url.ToString();
+            historyNew.Title = webBrowser1.DocumentTitle;
+            historyNew.Date = DateTime.Now;
+            HistoryManager.AddItem(historyNew);
             if (eventReconizer == 1)
             {
                 eventReconizer = 0;
 
-                var historyNew = new HistoryItem();
-                historyNew.URL = webBrowser1.Url.ToString();
-                historyNew.Title = webBrowser1.DocumentTitle;
-                historyNew.Date = DateTime.Now;
-                HistoryManager.AddItem(historyNew);
+
 
             }
             else
@@ -155,11 +155,7 @@ namespace WebBrowser.UI
                 {
                     webHistoryB.Push(webBrowser1.Url.ToString());
                     textBox1.Text = webBrowser1.Url.ToString();
-                    var historyNew = new HistoryItem();
-                    historyNew.URL = webBrowser1.Url.ToString();
-                    historyNew.Title = webBrowser1.DocumentTitle;
-                    historyNew.Date = DateTime.Now;
-                    HistoryManager.AddItem(historyNew);
+
                 } 
             }
 
@@ -174,15 +170,23 @@ namespace WebBrowser.UI
         private void toolStripButton6_Click(object sender, EventArgs e)
         {
             var items = BookmarkManager.GetItems();
-            
 
-            foreach (var item in items)
+            if (items.Count == 0)
             {
-                if (item.URL == webBrowser1.Url.ToString())
+                var bookmarkNew = new BookmarkItem();
+                bookmarkNew.URL = webBrowser1.Url.ToString();
+                bookmarkNew.Title = webBrowser1.DocumentTitle;
+                BookmarkManager.AddItem(bookmarkNew);
+            }
+            else
+            {
+                List<string> URLs = new List<string>();
+
+                foreach (var item in items)
                 {
-                    continue;
+                    URLs.Add(item.URL);
                 }
-                else
+                if (!URLs.Contains(webBrowser1.Url.ToString()))
                 {
                     var bookmarkNew = new BookmarkItem();
                     bookmarkNew.URL = webBrowser1.Url.ToString();
@@ -190,8 +194,6 @@ namespace WebBrowser.UI
                     BookmarkManager.AddItem(bookmarkNew);
                 }
             }
-
-
 
         }
     }
