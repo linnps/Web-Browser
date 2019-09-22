@@ -132,10 +132,18 @@ namespace WebBrowser.UI
 
         private void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
         {
+
+
             if (eventReconizer == 1)
             {
                 eventReconizer = 0;
-                
+
+                var historyNew = new HistoryItem();
+                historyNew.URL = webBrowser1.Url.ToString();
+                historyNew.Title = webBrowser1.DocumentTitle;
+                historyNew.Date = DateTime.Now;
+                HistoryManager.AddItem(historyNew);
+
             }
             else
             {
@@ -147,6 +155,11 @@ namespace WebBrowser.UI
                 {
                     webHistoryB.Push(webBrowser1.Url.ToString());
                     textBox1.Text = webBrowser1.Url.ToString();
+                    var historyNew = new HistoryItem();
+                    historyNew.URL = webBrowser1.Url.ToString();
+                    historyNew.Title = webBrowser1.DocumentTitle;
+                    historyNew.Date = DateTime.Now;
+                    HistoryManager.AddItem(historyNew);
                 } 
             }
 
