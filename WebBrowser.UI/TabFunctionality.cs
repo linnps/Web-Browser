@@ -160,10 +160,26 @@ namespace WebBrowser.UI
 
         private void toolStripButton6_Click(object sender, EventArgs e)
         {
-            var bookmarkNew = new BookmarkItem();
-            bookmarkNew.URL = webBrowser1.Url.ToString();
-            bookmarkNew.Title = webBrowser1.DocumentTitle;
-            BookmarkManager.AddItem(bookmarkNew);
+            var items = BookmarkManager.GetItems();
+            
+
+            foreach (var item in items)
+            {
+                if (item.URL == webBrowser1.Url.ToString())
+                {
+                    continue;
+                }
+                else
+                {
+                    var bookmarkNew = new BookmarkItem();
+                    bookmarkNew.URL = webBrowser1.Url.ToString();
+                    bookmarkNew.Title = webBrowser1.DocumentTitle;
+                    BookmarkManager.AddItem(bookmarkNew);
+                }
+            }
+
+
+
         }
     }
 }
