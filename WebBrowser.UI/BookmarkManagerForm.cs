@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WebBrowser.Logic;
 
 namespace WebBrowser.UI
 {
@@ -19,7 +20,13 @@ namespace WebBrowser.UI
 
         private void BookmarkManagerForm_Load(object sender, EventArgs e)
         {
+            var items = BookmarkManager.GetItems();
+            listBox1.Items.Clear();
 
+            foreach (var item in items)
+            {
+                listBox1.Items.Add(string.Format("{0}{1}", item.Title, item.URL));
+            }
         }
     }
 }
