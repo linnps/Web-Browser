@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WebBrowser.Logic;
 
 namespace WebBrowser.UI
 {
@@ -155,6 +156,14 @@ namespace WebBrowser.UI
         {
             webBrowser1.Navigate(textBox1.Text);
             eventReconizer = 1;
+        }
+
+        private void toolStripButton6_Click(object sender, EventArgs e)
+        {
+            var bookmarkNew = new BookmarkItem();
+            bookmarkNew.URL = webBrowser1.Url.ToString();
+            bookmarkNew.Title = webBrowser1.DocumentTitle;
+            BookmarkManager.AddItem(bookmarkNew);
         }
     }
 }
