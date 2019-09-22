@@ -31,7 +31,9 @@ namespace WebBrowser.Logic
                 results.Add(item);
             }
             return results;
-        //this is for history manager
+            //this is for history manager
+            //Add a History Manager class, with static methods that can add a history item to the
+            //database and get all history items from the database
         }
     }
 }
