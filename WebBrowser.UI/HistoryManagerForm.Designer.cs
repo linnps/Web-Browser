@@ -35,9 +35,9 @@
             // 
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 25;
-            this.listBox1.Location = new System.Drawing.Point(65, 26);
+            this.listBox1.Location = new System.Drawing.Point(127, 74);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(598, 379);
+            this.listBox1.Size = new System.Drawing.Size(870, 554);
             this.listBox1.TabIndex = 0;
             // 
             // HistoryManagerForm
@@ -48,6 +48,7 @@
             this.Controls.Add(this.listBox1);
             this.Name = "HistoryManagerForm";
             this.Text = "HistoryManagerForm";
+            this.Load += new System.EventHandler(this.HistoryManagerForm_Load);
             this.ResumeLayout(false);
 
         }
