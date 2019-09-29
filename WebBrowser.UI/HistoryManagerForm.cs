@@ -52,5 +52,12 @@ namespace WebBrowser.UI
                 }
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int toDeletedItemIndex = listBox1.SelectedIndex;
+            var toDeleteditem = HistoryManager.GetItems();
+            HistoryManager.DeleteDatabaseItem(toDeleteditem[toDeletedItemIndex]);
+        }
     }
 }
