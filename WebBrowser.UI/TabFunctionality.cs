@@ -17,6 +17,8 @@ namespace WebBrowser.UI
         Stack<string> webHistoryF = new Stack<string>();
         int eventReconizer = 0;
 
+
+
         public TabFunctionality()
         {
             InitializeComponent();
@@ -159,6 +161,9 @@ namespace WebBrowser.UI
                 } 
             }
 
+
+            toolStripStatusLabel1.Text = "done";
+
         }
 
         private void toolStripButton3_Click(object sender, EventArgs e)
@@ -195,6 +200,17 @@ namespace WebBrowser.UI
                 }
             }
 
+        }
+
+        private void webBrowser1_ProgressChanged(object sender, WebBrowserProgressChangedEventArgs e)
+        {
+            toolStripProgressBar1.Maximum = (int) e.MaximumProgress;
+            toolStripProgressBar1.Value = (int)e.CurrentProgress < 0 || (int)e.CurrentProgress > (int)e.MaximumProgress ? (int)e.MaximumProgress : (int)e.CurrentProgress;
+        }
+
+        private void webBrowser1_Navigating(object sender, WebBrowserNavigatingEventArgs e)
+        {
+            toolStripStatusLabel1.Text = "loading";
         }
     }
 }
