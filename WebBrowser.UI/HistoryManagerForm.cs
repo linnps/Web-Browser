@@ -68,5 +68,17 @@ namespace WebBrowser.UI
                 listBox1.Items.Add(string.Format("{0} {1} {2}", item.Date, item.Title, item.URL));
             }
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var toDeleteditem = HistoryManager.GetItems();
+            foreach(var item in toDeleteditem)
+            {
+                HistoryManager.DeleteDatabaseItem(item);
+            }
+
+            ///refresh
+            listBox1.Items.Clear();
+        }
     }
 }

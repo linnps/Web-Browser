@@ -39,22 +39,23 @@ namespace WebBrowser.Logic
                 results.Add(item);
             }
 
-            //HistoryItem newItem = new HistoryItem();
-            //int i = 0;
-            //while (i != results.Count)
-            //{
-            //    if (newItem.URL == results[i].URL)
-            //    {
+            HistoryItem newItem = new HistoryItem();
+            int i = 0;
+            while (i != results.Count)
+            {
+                if (newItem.URL == results[i].URL)
+                {
+
+                    DeleteDatabaseItem(results[i]);
+                    results.Remove(results[i]);
                     
-            //        results.Remove(results[i]);
-                    
-            //    }
-            //    else
-            //    {
-            //        newItem = results[i];
-            //        i++;
-            //    }
-            //}
+                }
+                else
+                {
+                    newItem = results[i];
+                    i++;
+                }
+            }
 
             return results;
             //this is for history manager
