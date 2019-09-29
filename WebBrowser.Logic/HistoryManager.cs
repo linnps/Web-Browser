@@ -31,6 +31,7 @@ namespace WebBrowser.Logic
             foreach (var row in rows)
             {
                 var item = new HistoryItem();
+                item.ID = row.Id;
                 item.URL = row.URL;
                 item.Title = row.Title;
                 item.Date = row.Date;

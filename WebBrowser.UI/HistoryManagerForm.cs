@@ -57,7 +57,16 @@ namespace WebBrowser.UI
         {
             int toDeletedItemIndex = listBox1.SelectedIndex;
             var toDeleteditem = HistoryManager.GetItems();
-            HistoryManager.DeleteDatabaseItem(toDeleteditem[toDeletedItemIndex]);
+            HistoryManager.DeleteDatabaseItem(toDeleteditem.ElementAt(toDeletedItemIndex));
+
+            ///refresh
+            var items = HistoryManager.GetItems();
+            listBox1.Items.Clear();
+
+            foreach (var item in items)
+            {
+                listBox1.Items.Add(string.Format("{0} {1} {2}", item.Date, item.Title, item.URL));
+            }
         }
     }
 }
