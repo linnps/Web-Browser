@@ -24,6 +24,7 @@ namespace WebBrowser.Logic
             foreach (var row in rows)
             {
                 var item = new BookmarkItem();
+                item.ID = row.Id;
                 item.URL = row.URL;
                 item.Title = row.Title;
 

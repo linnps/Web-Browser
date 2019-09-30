@@ -35,22 +35,25 @@ namespace WebBrowser.UI
         {
             String key = SearchTextBox.Text;
 
-            if (key == "")
-            {
-                MessageBox.Show("input keywords or a phrase");
-            }
-            else
-            {
+            var items = HistoryManager.GetItems();
+            listBox1.Items.Clear();
 
-                var items = HistoryManager.GetItems();
-                listBox1.Items.Clear();
-
-                foreach (var item in items)
-                {
-                    if (item.Title.Contains(key) || item.URL.Contains(key))
-                        listBox1.Items.Add(string.Format("{0} {1} {2}", item.Date, item.Title, item.URL));
-                }
+            foreach (var item in items)
+            {
+                //if (item.Title.Contains(key) || item.URL.Contains(key))
+                string searchedString = String.Format("{0} {1} {2}", item.Date, item.Title, item.URL);
+                if (Regex.IsMatch(searchedString, string.Format(@"\b{0}\b", Regex.Escape(key)), RegexOptions.IgnoreCase))
+                    listBox1.Items.Add(string.Format("{0} {1} {2}", item.Date, item.Title, item.URL));
             }
+            //if (key == "")
+            //{
+            //    MessageBox.Show("input keywords or a phrase");
+            //}
+            //else
+            //{
+
+
+            //}
         }
 
         private void button1_Click(object sender, EventArgs e)

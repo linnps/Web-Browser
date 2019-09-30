@@ -42,12 +42,12 @@
             this.listBox1.ItemHeight = 25;
             this.listBox1.Location = new System.Drawing.Point(127, 74);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(1526, 1004);
+            this.listBox1.Size = new System.Drawing.Size(1518, 604);
             this.listBox1.TabIndex = 0;
             // 
             // SearchTextBox
             // 
-            this.SearchTextBox.Location = new System.Drawing.Point(143, 1128);
+            this.SearchTextBox.Location = new System.Drawing.Point(129, 766);
             this.SearchTextBox.Name = "SearchTextBox";
             this.SearchTextBox.Size = new System.Drawing.Size(200, 31);
             this.SearchTextBox.TabIndex = 1;
@@ -55,7 +55,7 @@
             // searchButton
             // 
             this.searchButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchButton.Location = new System.Drawing.Point(398, 1106);
+            this.searchButton.Location = new System.Drawing.Point(384, 744);
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(205, 74);
             this.searchButton.TabIndex = 2;
@@ -66,7 +66,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(682, 1106);
+            this.button1.Location = new System.Drawing.Point(668, 744);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(184, 74);
             this.button1.TabIndex = 3;
@@ -77,7 +77,7 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(931, 1106);
+            this.button2.Location = new System.Drawing.Point(917, 744);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(273, 74);
             this.button2.TabIndex = 4;
@@ -89,6 +89,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1866, 1251);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
