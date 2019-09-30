@@ -163,6 +163,7 @@ namespace WebBrowser.UI
 
 
             toolStripStatusLabel1.Text = "done";
+            webBrowser1.Document.MouseOver += new HtmlElementEventHandler(document_MouseOver);
 
         }
 
@@ -211,6 +212,11 @@ namespace WebBrowser.UI
         private void webBrowser1_Navigating(object sender, WebBrowserNavigatingEventArgs e)
         {
             toolStripStatusLabel1.Text = "loading";
+        }
+
+        private void document_MouseOver(object sender, HtmlElementEventArgs e)
+        {
+            urlToolStripStatusLabel.Text = e.ToElement.GetAttribute("href");
         }
     }
 }

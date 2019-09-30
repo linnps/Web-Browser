@@ -77,5 +77,46 @@ namespace WebBrowser.UI
                 HistoryManager.DeleteDatabaseItem(item);
             }
         }
+
+        private void tabControl1_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            if (e.Index == this.tabControl1.TabCount - 1)
+            {
+                e.Graphics.DrawString("+", e.Font, Brushes.Gray, e.Bounds.Right - 15, e.Bounds.Top + 4);
+                this.tabControl1.Padding = new Point(20, 3);
+            }
+            else
+            {
+                e.Graphics.DrawString("x", e.Font, Brushes.Gray, e.Bounds.Right - 15, e.Bounds.Top + 4);
+                e.Graphics.DrawString(this.tabControl1.TabPages[e.Index].Text, e.Font, Brushes.Black, e.Bounds.Left + 12, e.Bounds.Top + 4);
+                e.DrawFocusRectangle();
+            }
+        }
+
+        private void tabControl1_MouseDown(object sender, MouseEventArgs e)
+        {
+            int lastTabIndex = tabControl1.TabCount - 1;
+            if (tabControl1.GetTabRect(lastTabIndex).Contains(e.Location))
+            {
+                TabFunctionality tabFunc1 = new TabFunctionality();
+                tabFunc1.Dock = DockStyle.Fill;
+                TabPage newPage1 = new TabPage("New Tab");
+                newPage1.Controls.Add(tabFunc1);
+                this.tabControl1.TabPages.Add(newPage1);
+            }
+            else
+            {
+                for (int i = 0; i < tabControl1.TabPages.Count - 1; i++)
+                {
+                    Rectangle rect = tabControl1.GetTabRect(i);
+                    Rectangle definedcloseSquare = new Rectangle(rect.Right - 15, rect.Top + 4, 9, 7);
+                    if (definedcloseSquare.Contains(e.Location))
+                    {
+                        this.tabControl1.TabPages.RemoveAt(i);
+                        break;
+                    }
+                }
+            }
+        }
     }
 }
