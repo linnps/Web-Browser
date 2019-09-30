@@ -45,6 +45,7 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.tabFunctionality1 = new WebBrowser.UI.TabFunctionality();
+            this.clearHistoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -59,7 +60,7 @@
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1921, 40);
+            this.menuStrip1.Size = new System.Drawing.Size(1921, 42);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -72,7 +73,7 @@
             this.printPageToolStripMenuItem,
             this.exitWebBrowserToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(64, 36);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(64, 38);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // newTabToolStripMenuItem
@@ -114,9 +115,10 @@
             // 
             this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.manageHistoryToolStripMenuItem,
-            this.manageBookmarksToolStripMenuItem});
+            this.manageBookmarksToolStripMenuItem,
+            this.clearHistoryToolStripMenuItem});
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
-            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(82, 36);
+            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(82, 38);
             this.toolsToolStripMenuItem.Text = "Tools";
             // 
             // manageHistoryToolStripMenuItem
@@ -138,7 +140,7 @@
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aboutToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(77, 36);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(77, 38);
             this.helpToolStripMenuItem.Text = "Help";
             // 
             // aboutToolStripMenuItem
@@ -154,7 +156,7 @@
             this.tabPage1.Location = new System.Drawing.Point(8, 39);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1905, 1113);
+            this.tabPage1.Size = new System.Drawing.Size(1905, 1111);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -163,10 +165,10 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Location = new System.Drawing.Point(0, 40);
+            this.tabControl1.Location = new System.Drawing.Point(0, 42);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1921, 1160);
+            this.tabControl1.Size = new System.Drawing.Size(1921, 1158);
             this.tabControl1.TabIndex = 3;
             // 
             // tabFunctionality1
@@ -175,8 +177,15 @@
             this.tabFunctionality1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabFunctionality1.Location = new System.Drawing.Point(3, 3);
             this.tabFunctionality1.Name = "tabFunctionality1";
-            this.tabFunctionality1.Size = new System.Drawing.Size(1899, 1107);
+            this.tabFunctionality1.Size = new System.Drawing.Size(1899, 1105);
             this.tabFunctionality1.TabIndex = 0;
+            // 
+            // clearHistoryToolStripMenuItem
+            // 
+            this.clearHistoryToolStripMenuItem.Name = "clearHistoryToolStripMenuItem";
+            this.clearHistoryToolStripMenuItem.Size = new System.Drawing.Size(325, 38);
+            this.clearHistoryToolStripMenuItem.Text = "Clear History";
+            this.clearHistoryToolStripMenuItem.Click += new System.EventHandler(this.clearHistoryToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -220,6 +229,7 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private TabFunctionality tabFunctionality1;
+        private System.Windows.Forms.ToolStripMenuItem clearHistoryToolStripMenuItem;
     }
 }
 
