@@ -218,5 +218,10 @@ namespace WebBrowser.UI
         {
             urlToolStripStatusLabel.Text = e.ToElement.GetAttribute("href");
         }
+
+        private void toolStripButton4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
