@@ -45,5 +45,21 @@ namespace WebBrowser.UI
                     listBox1.Items.Add(string.Format("{0} {1}", item.Title, item.URL));
             }
         }
+
+        private void deleteButton_Click(object sender, EventArgs e)
+        {
+            int toDeletedItemIndex = listBox1.SelectedIndex;
+            var toDeleteditem = BookmarkManager.GetItems();
+            BookmarkManager.DeleteDatabaseItem(toDeleteditem.ElementAt(toDeletedItemIndex));
+
+            ///refresh
+            var items = BookmarkManager.GetItems();
+            listBox1.Items.Clear();
+
+            foreach (var item in items)
+            {
+                listBox1.Items.Add(string.Format("{0} {1}", item.Title, item.URL));
+            }
+        }
     }
 }

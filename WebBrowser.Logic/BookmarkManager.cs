@@ -9,6 +9,12 @@ namespace WebBrowser.Logic
 {
     public class BookmarkManager
     {
+        public static void DeleteDatabaseItem(BookmarkItem item)
+        {
+            var adapter = new BookmarksTableAdapter();
+            adapter.Delete(item.ID);
+        }
+
         public static void AddItem(BookmarkItem item)
         {
             var adapter = new BookmarksTableAdapter();
