@@ -3,7 +3,7 @@
 Please refer to the link for display:
 https://youtu.be/Q8jyicQkn44
 <hr>
-The course CPSC2713 in Auburn University is intended to give us a hands-on experience with an object-oriented visual programming language. We started from a single buttom to the whole software. By the end of this course we successfully developed a three-tier, graphical, event-driven desktop application, a web browser, using an object-oriented language (C#) while incorporating essential software construction methodologies.
+The course CPSC2713 in Auburn University is intended to give us a hands-on experience with an object-oriented visual programming language. We started from a single buttom to the whole software. By the end of this course we successfully developed a three-tier, graphical, event-driven desktop application, a web browser, using an object-oriented language (C#) and SQL database while incorporating essential software construction methodologies.
 
 <hr>
 <div>
